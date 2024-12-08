@@ -1,0 +1,18 @@
+
+/* Body ve genel stil ayarları */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Açık gri arka plan */
+    color: #333; /* Koyu gri yazı rengi */
+    margin: 0;
+    padding: 0;
+}
+
+/* Div için stil */
+div {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50; /* Lacivertimsi gri renk */
+}
