@@ -11,6 +11,7 @@ public class Post {
     private String title;
     private String description;
     private String content;
+    private String status;
     private LocalDateTime createdAt;
     private LocalDateTime publishedAt;
     private LocalDateTime updatedAt;
@@ -22,7 +23,11 @@ public class Post {
         this.title = title;
         this.description = description;
         this.content = content;
-        this.createdAt = createdAt;
+        this.createdAt = LocalDateTime.now();
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getTitle() {
@@ -36,4 +41,16 @@ public class Post {
     public String getContent() {
         return content;
     }
+
+    public void update (String title, String description, String content){
+        this.title = title;
+        this.description = description;
+        this.content = content;
+        this.updatedAt = LocalDateTime.now();
+    }
+
+    public void delete (){
+        this.status = "DELETED";
+    }
+
 }

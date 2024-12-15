@@ -26,15 +26,35 @@ public class PostController {
         return "posts";
     }
 
-    @GetMapping("posts/create")
+    @GetMapping("/posts/create")
     public String showCreatePostForm(){
         return "post-create";
     }
 
-    @PostMapping("posts/create")
+    @PostMapping("/posts/create")
     public String createPost(@ModelAttribute Post post){
         postService.createPost(1L,post.getTitle(),post.getDescription(),post.getContent());
         return "redirect:/posts";
     }
+
+    @PostMapping("/posts/{postId}/delete")
+    public String deletePost(@PathVariable("postId") Long postId){
+        postService.deletePostById(postId);
+        return "redirect:/posts";
+    }
+
+    @GetMapping("/posts/{postId}/update")
+    public String showUpdatePostForm(@PathVariable("postId") Long postId, Model model){
+        Post post = postService.getPostById(postId);
+        model.addAttribute("post", post);
+        return "post-update";
+    }
+
+    @PostMapping("/posts/{postId}/update")
+    public String updatePost(@PathVariable("postId") Long postId, @ModelAttribute Post post){
+        postService.updatePost(postId,post.getTitle(),post.getDescription(),post.getContent());
+        return "redirect:/posts";
+    }
+
 
 }
