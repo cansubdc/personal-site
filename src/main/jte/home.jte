@@ -1,5 +1,5 @@
 @param com.cansubdc.site.common.controller.HomeController.HomePage homePage
-@param java.util.List<com.cansubdc.site.entity.Post> posts
+@param java.util.List<com.cansubdc.site.post.entity.Post> posts
 @param String username
 
 @template.index(

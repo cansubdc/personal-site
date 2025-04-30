@@ -1,4 +1,4 @@
-@param java.util.List<com.cansubdc.site.entity.Post> posts
+@param java.util.List<com.cansubdc.site.post.entity.Post> posts
 
 @template.index(
 headElements = @`
@@ -19,7 +19,7 @@ content = @`
                 <th>  </th>
                 <th>  </th>
             </tr>
-            @for(com.cansubdc.site.entity.Post post: posts)
+            @for(com.cansubdc.site.post.entity.Post post: posts)
                 <tr>
                     <td> ${post.getTitle()} </td>
                     <td> ${post.getDescription()}</td>

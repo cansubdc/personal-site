@@ -1,4 +1,4 @@
-@param com.cansubdc.site.entity.Post post
+@param com.cansubdc.site.post.entity.Post post
 <!DOCTYPE html>
 
 @template.index(

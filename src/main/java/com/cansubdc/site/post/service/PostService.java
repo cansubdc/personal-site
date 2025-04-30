@@ -15,7 +15,7 @@ public class PostService {
 
     private final PostRepository postRepository;
     private static final Logger log = LoggerFactory.getLogger(PostService.class);
-    private static Long postCount = 0L;
+
 
     @Autowired
     public PostService(PostRepository postRepository) {
@@ -31,7 +31,7 @@ public class PostService {
     }
 
     public Post getPostById(Long id){
-        var p = postRepository.findAll().stream().filter(post -> post.getId() == id).findFirst().orElse(null);
+        var p = postRepository.findAll().stream().filter(post -> post.getId().equals(id)).findFirst().orElse(null);
         log.debug("p" + p);
         return p;
     }
