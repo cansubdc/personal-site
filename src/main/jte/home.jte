@@ -1,4 +1,4 @@
-@param com.cansubdc.site.controller.HomeController.HomePage homePage
+@param com.cansubdc.site.common.controller.HomeController.HomePage homePage
 @param java.util.List<com.cansubdc.site.entity.Post> posts
 @param String username
 

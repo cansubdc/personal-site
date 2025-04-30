@@ -1,6 +1,6 @@
-package com.cansubdc.site.controller;
+package com.cansubdc.site.common.controller;
 
-import com.cansubdc.site.entity.Post;
+import com.cansubdc.site.post.entity.Post;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +19,7 @@ public class HomeController {
     private String getHomePage(Model model){
         model.addAttribute("homePage", new HomePage("Home","Welcome to Site"));
         model.addAttribute("posts", posts);
-        return "home";
+        return "posts";
     }
 
 }

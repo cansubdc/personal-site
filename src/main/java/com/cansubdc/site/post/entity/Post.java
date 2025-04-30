@@ -1,13 +1,20 @@
-package com.cansubdc.site.entity;
+package com.cansubdc.site.post.entity;
 
-import jakarta.validation.constraints.Size;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 
 import java.time.LocalDateTime;
 
+
+@Entity
 public class Post {
 
+    @Id
+    @GeneratedValue
     private Long id;
     private Long userId;
+    private String username;
     private String title;
     private String description;
     private String content;
@@ -16,10 +23,11 @@ public class Post {
     private LocalDateTime publishedAt;
     private LocalDateTime updatedAt;
 
+    public Post(){
 
-    public Post(Long id, Long userId, String title, String description, String content) {
-        this.id = id;
-        this.userId = userId;
+    }
+
+    public Post(String title, String description, String content) {
         this.title = title;
         this.description = description;
         this.content = content;
@@ -40,6 +48,26 @@ public class Post {
 
     public String getContent() {
         return content;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public void update (String title, String description, String content){

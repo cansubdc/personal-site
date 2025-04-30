@@ -1,4 +1,4 @@
-@param com.cansubdc.site.controller.LoginController.LoginPage loginPage
+@param com.cansubdc.site.common.controller.LoginController.LoginPage loginPage
 @param String errorMessage
 
 @template.index(

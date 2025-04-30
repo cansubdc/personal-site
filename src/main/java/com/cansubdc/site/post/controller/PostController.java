@@ -1,11 +1,10 @@
-package com.cansubdc.site.controller;
+package com.cansubdc.site.post.controller;
 
-import com.cansubdc.site.entity.Post;
-import com.cansubdc.site.service.PostService;
-import jakarta.validation.Valid;
+import com.cansubdc.site.post.dto.PostCreateRequest;
+import com.cansubdc.site.post.entity.Post;
+import com.cansubdc.site.post.service.PostService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -33,7 +32,7 @@ public class PostController {
 
     @PostMapping("/posts/create")
     public String createPost(@ModelAttribute Post post){
-        postService.createPost(1L,post.getTitle(),post.getDescription(),post.getContent());
+        postService.createPost(new PostCreateRequest(post.getTitle(),post.getDescription(),post.getContent()));
         return "redirect:/posts";
     }
 
